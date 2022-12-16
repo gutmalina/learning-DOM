@@ -8,13 +8,13 @@ body {
 
 .page {
   margin: 0 auto;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Inter, sans-serif;
   font-style: normal;
   color: #FFFFFF;
+  max-width: 1440px;
 }
 
 .header{
-  margin: 0 71px;
   font-style: italic;
   font-weight: 500;
   font-size: 24px;
@@ -28,4 +28,97 @@ body {
 
 li{
   margin: 0 64px;
+}
+.lead{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 70px;
+}
+.lead__title{
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 144px;
+  margin: 100px auto 0;
+}
+.lead__subtitle{
+  font-weight: 275;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  max-width: 50%;
+}
+.lead__btn{
+  width: 191px;
+  height: 60px;
+  background-image: linear-gradient(to right, #4067f5, #108db3, #0d034d);
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin: 300px auto 60px;
+}
+.lead__img{
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+}
+.gallery{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.gallery__img{
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+}
+.gallery__title{
+  margin: 150px 0 50px;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 60px;
+}
+.gallery__container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.card {
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(88, 88, 88, 0.5);
+}
+.card__img{
+  max-width: calc(100% - 48px);
+  height: 252px;
+}
+.card__title {
+  margin: 0 24px;
+  align-self: flex-start;
+  max-width: calc(100% - 48px);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+}
+.card__subtitle {
+  margin: 0;
+  padding: 0;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 48px);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+}
+.card__btn {
 }
