@@ -15,6 +15,7 @@ const titleSecond = document.createElement('h2');
 const div = document.createElement('div');
 const imgGallery = document.createElement('img');
 const cardTemplate = document.querySelector('#card');
+const sectionAboutUs = document.createElement('section')
 const footer = document.createElement('footer');
 const arrCard = [
   {
@@ -39,10 +40,8 @@ const arrCard = [
   }
 ]
 
-/** вставить узел */
 body.prepend(page);
 page.prepend(header, main, footer);
-
 header.append(ul);
 
 /** наполнить header */
@@ -60,10 +59,9 @@ function addMenu(){
 };
 ul.append(...addMenu());
 
-main.prepend(sectionLead, sectionGallery);
+main.prepend(sectionLead, sectionGallery, sectionAboutUs);
 sectionLead.prepend(img, titleFirst, subtitle, btn);
 sectionGallery.prepend(imgGallery, titleSecond, div);
-// div.prepend(card);
 
 /** наполнить галерею карточек */
 function addCard(){
@@ -84,6 +82,21 @@ function addCard(){
 };
 addCard();
 
+/** наполнить секцию с помощью cloneNode*/
+function addSectionAboutUs(){
+  const img = imgGallery.cloneNode(true);
+  img.classList.add('gallery__img');
+  img.src = 'https://images.unsplash.com/photo-1598362651567-e72621ef29f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80';
+  const title = titleSecond.cloneNode(true);
+  title.classList.add('gallery__title', 'about__title');
+  title.textContent = 'About US';
+  const subtitleAbout = subtitle.cloneNode(true);
+  subtitleAbout.classList.add('lead__subtitle', 'aboutUs__subtitle');
+  subtitleAbout.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.';
+  sectionAboutUs.prepend(img, title, subtitleAbout);
+};
+addSectionAboutUs();
+
 /** присвоить класс */
 page.classList.add('page');
 header.classList.add('header');
@@ -98,6 +111,7 @@ sectionGallery.classList.add('gallery');
 imgGallery.classList.add('gallery__img');
 titleSecond.classList.add('gallery__title');
 div.classList.add('gallery__container');
+sectionAboutUs.classList.add('aboutUs', 'gallery');
 
 /** установить атрибут */
 btn.setAttribute('type', 'button')
@@ -111,4 +125,3 @@ titleSecond.textContent = 'Where do you want to go';
 /** добавить изображение */
 img.src = 'https://images.unsplash.com/photo-1671030970219-b7b0984a970b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1156&q=80'
 imgGallery.src = 'https://images.unsplash.com/photo-1670171336433-1cf9b6124068?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1123&q=80';
-
